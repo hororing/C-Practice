@@ -75,10 +75,6 @@ int main()
 
 	cin >> select;
 
-
-
-	if (select == 1)
-	{
 		while(select == 1)
 		{ 
 			MakeNumber();
@@ -86,12 +82,8 @@ int main()
 			cin >> select;
 		}
 
-	}
-	else
-	{
 		return 0;
-	}
-	
+
 
 
 
