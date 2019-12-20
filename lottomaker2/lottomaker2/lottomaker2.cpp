@@ -4,8 +4,9 @@
 #include <iostream>
 using namespace std;
 
-void MakeNumber(int a)
+void MakeNumber()
 {
+	int number;
 	int i;
 	int number1;
 	int number2;
@@ -14,36 +15,40 @@ void MakeNumber(int a)
 	int number5;
 	int number6;
 
-	for ( i = 0; i < a; i++) // a세트 출력
+	cout << "몇 개를 생성할까요?" << endl;
+	cin >> number;
+
+	for ( i = 0; i < number; i++) // 입력한 값만큼 출력
 	{
-		number1 = rand() % 46;
-		number2 = rand() % 46;
-		number3 = rand() % 46;
-		number4 = rand() % 46;
-		number5 = rand() % 46;
-		number6 = rand() % 46;
-		// 6자리 숫자 랜덤 생성
+		number1 = (rand() % 45) + 1;
+		number2 = (rand() % 45) + 1;
+		number3 = (rand() % 45) + 1;
+		number4 = (rand() % 45) + 1;
+		number5 = (rand() % 45) + 1;
+		number6 = (rand() % 45) + 1;
+		// 6자리 숫자 랜덤 생성... 자꾸 0이 나와서 1을 더해줌
 
 
 		// 하나라도 같은 애가 있다면 다시 생성
 
-		while
-			(number1 != number2
-			&& number1 != number3
-			&& number1 != number4
-			&& number1 != number5
-			&& number1 != number6)
+		while//true인동안 반복. 숫자중 같은게 하나라도 있으면 반복
+			(number1 == number2 || number1 == number3 || number1 == number4 || number1 == number5 || number1 == number6
+			|| number2 == number3 || number2 == number4 || number2 == number5 || number2 == number6
+			|| number3 == number4 || number3 == number5 || number3 == number6
+			|| number4 == number5 || number4 == number6
+			|| number5 == number6)
 		{
-			number1 = rand() % 46;
-			number2 = rand() % 46;
-			number3 = rand() % 46;
-			number4 = rand() % 46;
-			number5 = rand() % 46;
-			number6 = rand() % 46;
-			
+			number1 = (rand() % 45) + 1;
+			number2 = (rand() % 45) + 1;
+			number3 = (rand() % 45) + 1;
+			number4 = (rand() % 45) + 1;
+			number5 = (rand() % 45) + 1;
+			number6 = (rand() % 45) + 1;
+			continue;
 		}
 
 		cout << number1 << " " << number2 << " " << number3 << " " << number4 << " " << number5 << " " << number6 << endl;
+		
 
 
 	}
@@ -70,31 +75,25 @@ int main()
 
 	cin >> select;
 
-	switch (select)
+
+
+	if (select == 1)
 	{
-	case 1:
-		cout << "몇 개를 생성할까요?" << endl;
-		cin >> number;
-		MakeNumber(number);
-
-	case 2:
-		Exit();
-
-
-	case 3:
-		cout << "  1. 다시하기                         2. 종료  " << endl;
-		
-		cin >> selectAgain;
-		if (selectAgain == 1)
-		{
-			select = 1;
+		while(select == 1)
+		{ 
+			MakeNumber();
+			cout << "  1. 다시하기                         2. 종료  " << endl;
+			cin >> select;
 		}
-		else
-		{
-			select = 2;
-		}
-		break;
+
 	}
+	else
+	{
+		return 0;
+	}
+	
+
+
 
 
 

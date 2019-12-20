@@ -1,1 +1,4 @@
-﻿LINK : fatal error LNK1168: D:\GitHub\lotto\lottomaker2\Debug\lottomaker2.exe을(를) 쓰기용으로 열 수 없습니다.
+﻿  lottomaker2.cpp
+d:\github\lotto\lottomaker2\lottomaker2\lottomaker2.cpp(68): warning C4101: 'selectAgain' :참조되지 않은 지역 변수입니다.
+d:\github\lotto\lottomaker2\lottomaker2\lottomaker2.cpp(67): warning C4101: 'number' :참조되지 않은 지역 변수입니다.
+  lottomaker2.vcxproj -> D:\GitHub\lotto\lottomaker2\Debug\lottomaker2.exe
