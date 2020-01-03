@@ -1,4 +1,5 @@
 ﻿  lottomaker2.cpp
-d:\github\lotto\lottomaker2\lottomaker2\lottomaker2.cpp(68): warning C4101: 'selectAgain' :참조되지 않은 지역 변수입니다.
-d:\github\lotto\lottomaker2\lottomaker2\lottomaker2.cpp(67): warning C4101: 'number' :참조되지 않은 지역 변수입니다.
-  lottomaker2.vcxproj -> D:\GitHub\lotto\lottomaker2\Debug\lottomaker2.exe
+d:\github\c++practice\lottomaker2\lottomaker2\lottomaker2.cpp(13): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\github\c++practice\lottomaker2\lottomaker2\lottomaker2.cpp(50): warning C4101: 'selectAgain' :참조되지 않은 지역 변수입니다.
+d:\github\c++practice\lottomaker2\lottomaker2\lottomaker2.cpp(49): warning C4101: 'number' :참조되지 않은 지역 변수입니다.
+  lottomaker2.vcxproj -> D:\GitHub\C++Practice\lottomaker2\Debug\lottomaker2.exe

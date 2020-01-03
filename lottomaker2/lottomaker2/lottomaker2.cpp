@@ -2,63 +2,43 @@
 //
 
 #include <iostream>
+#include <time.h>
 using namespace std;
+
+
 
 void MakeNumber()
 {
 	int number;
-	int i;
-	int number1;
-	int number2;
-	int number3;
-	int number4;
-	int number5;
-	int number6;
+	srand(time(NULL));
+	int lottoNumber[6];
+
 
 	cout << "몇 개를 생성할까요?" << endl;
 	cin >> number;
 
-	for ( i = 0; i < number; i++) // 입력한 값만큼 출력
+	for (int i = 0; i < number; i++) // number 만큼 생성
 	{
-		number1 = (rand() % 45) + 1;
-		number2 = (rand() % 45) + 1;
-		number3 = (rand() % 45) + 1;
-		number4 = (rand() % 45) + 1;
-		number5 = (rand() % 45) + 1;
-		number6 = (rand() % 45) + 1;
-		// 6자리 숫자 랜덤 생성... 자꾸 0이 나와서 1을 더해줌
-
-
-		// 하나라도 같은 애가 있다면 다시 생성
-
-		while//true인동안 반복. 숫자중 같은게 하나라도 있으면 반복
-			(number1 == number2 || number1 == number3 || number1 == number4 || number1 == number5 || number1 == number6
-			|| number2 == number3 || number2 == number4 || number2 == number5 || number2 == number6
-			|| number3 == number4 || number3 == number5 || number3 == number6
-			|| number4 == number5 || number4 == number6
-			|| number5 == number6)
+		for (int j = 0; j < 6; j++) // 6개 생성
 		{
-			number1 = (rand() % 45) + 1;
-			number2 = (rand() % 45) + 1;
-			number3 = (rand() % 45) + 1;
-			number4 = (rand() % 45) + 1;
-			number5 = (rand() % 45) + 1;
-			number6 = (rand() % 45) + 1;
-			continue;
+			lottoNumber[j] = (rand() % 45) + 1;
+
+			for(int k = 0; k < j; k++) //n번째를 뽑으면 앞의 0부터 n까지 비교
+				if (lottoNumber[j] == lottoNumber[k])
+				{
+					break; //같으면 빠져나감. 아니면 ++
+				}
+				
+			}
+
+		cout << lottoNumber[0] << " " << lottoNumber[1] << " " << lottoNumber[2] << " " << lottoNumber[3] << " " << lottoNumber[4] << " " << lottoNumber[5] << endl;
+
 		}
 
-		cout << number1 << " " << number2 << " " << number3 << " " << number4 << " " << number5 << " " << number6 << endl;
-		
-
-
-	}
-
 }
 
-int Exit()
-{
-	return 0;
-}
+
+
 
 
 int main()
@@ -75,21 +55,31 @@ int main()
 
 	cin >> select;
 
-		while(select == 1)
-		{ 
-			MakeNumber();
-			cout << "  1. 다시하기                         2. 종료  " << endl;
-			cin >> select;
-		}
-
+	while (select == 1)
+	{
+		MakeNumber();
+		cout << "  1. 다시하기                         2. 종료  " << endl;
+		cin >> select;
+		continue;
+	}
+	if (select == 2)
+	{
 		return 0;
+	}
+	else
+	{
+		cout << "잘못된 값이 입력되었습니다" << endl;
+		return 0; //main()을 다시 출력하고 싶은데 int가 아닌 값(문자열이나 소수)을 받으면 main이 계속 실행됨.
 
-
-
+	}
 
 
 
 }
+
+	
+	
+
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
 // 프로그램 디버그: <F5> 키 또는 [디버그] > [디버깅 시작] 메뉴
